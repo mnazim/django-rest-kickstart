@@ -1,0 +1,29 @@
+{
+    "_meta": {
+        "sources": [
+            {
+                "url": "https://pypi.python.org/simple",
+                "verify_ssl": true
+            }
+        ],
+        "requires": {},
+        "hash": {
+            "sha256": "2a02c47214ac4f2cb8557aa78db55e86faf95fb6ae74e64de23b6777badd8bdb"
+        }
+    },
+    "default": {
+        "pytz": {
+            "hash": "sha256:d1d6729c85acea5423671382868627129432fba9a89ecbb248d8d1c7a9f01c67",
+            "version": "==2017.2"
+        },
+        "Django": {
+            "hash": "sha256:bb3109a31cfa016e5f234223665f80fc06107f2169afb9f6dc8828295db73547",
+            "version": "==1.11.1"
+        },
+        "psycopg2": {
+            "hash": "sha256:4cae3856e9b41a4861ad32fd8a4aabc7669a0b828776bb3ce0ca29333dabf40c",
+            "version": "==2.7.1"
+        }
+    },
+    "develop": {}
+}

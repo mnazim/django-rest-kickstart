@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+
+[packages]
+psycopg2 = "*"
+Django = "*"
+django-extensions = "*"
+django-custom-user = "*"
+django-rest-swagger = "*"
+djangorestframework-jwt = "*"
+simpleflake = "*"
+django-registration = "*"
+django-model-utils = "*"
+django-safedelete = "*"
+
+[dev-packages]
+ipython = "*"

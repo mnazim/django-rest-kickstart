@@ -1,0 +1,10 @@
+{% extends 'rest_framework_swagger/base.html' %}
+
+{% block swagger_ui_container %}
+{{ block.super }}
+<form action="." method="post">
+{% csrf_token %}
+{{ form.as_p }}
+<button type="submit">Login</button>
+</form>
+{% endblock %}
