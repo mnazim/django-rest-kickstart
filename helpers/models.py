@@ -17,6 +17,9 @@ class BaseModel(models.Model):
     )
     created = models.DateTimeField(_('creation time'), auto_now_add=True)
     modified = models.DateTimeField(_('last modification time'), auto_now=True)
+
+    # Store it in depot, if it's not a foreign key, or a piece
+    # of data that absolutely must be a separate field.
     depot = JSONField(_('JSON Depot'), default={}, blank=True)
 
     class Meta:
