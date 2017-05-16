@@ -9,3 +9,6 @@ class Thing(BaseModel):
 
     class Meta:
         db_table = 'things'
+
+    def __str__(self):
+        return self.slug

@@ -5,6 +5,6 @@ class ThingSerializer(BaseModelSerializer):
     class Meta:
         model = Thing
         fields = [
-            'pk',
+            'id',
             'name',
         ]

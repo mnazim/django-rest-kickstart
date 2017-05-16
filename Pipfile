@@ -12,7 +12,9 @@ djangorestframework-jwt = "*"
 simpleflake = "*"
 django-registration = "*"
 django-model-utils = "*"
-django-safedelete = "*"
+django-filter = "*"
+dj-database-url = "*"
+django12factor = "*"
 
 [dev-packages]
 ipython = "*"

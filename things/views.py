@@ -6,3 +6,4 @@ from .serializers import ThingSerializer
 class ThingViewSet(viewsets.ModelViewSet):
     queryset = Thing.objects.all()
     serializer_class = ThingSerializer
+    filter_fields = ['id', 'name', 'slug']
