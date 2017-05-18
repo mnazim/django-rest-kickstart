@@ -30,6 +30,8 @@ INSTALLED_APPS += [
     'rest_framework',
     'rest_framework_swagger',
     'django_filters',
+    'taggit',
+    'taggit_serializer',
 ]
 
 # Our apps
@@ -129,6 +131,38 @@ LOGIN_REDIRECT_URL = '/'
 INTERNAL_IPS = [
     '127.0.0.1',
 ]
+TAGGIT_CASE_INSENSITIVE = True
+
+SWAGGER_SETTINGS = {
+    'exclude_url_names': [],
+    'exclude_namespaces': [],
+    'api_version': '0.1',
+    'api_path': '/api/',
+    'relative_paths': False,
+    'enabled_methods': [
+        'get',
+        'post',
+        'put',
+        'patch',
+        'delete'
+    ],
+    'api_key': '',
+    'is_authenticated': False,
+    'is_superuser': False,
+    'unauthenticated_user': 'django.contrib.auth.models.AnonymousUser',
+    'permission_denied_handler': None,
+    'resource_access_handler': None,
+    'base_path':'helloreverb.com/docs',
+    'info': {
+        'contact': 'iam@mnazim.co',
+        'description': '',
+        'license': 'MIT',
+        'licenseUrl': 'https://mit-license.org/',
+        'title': 'Swagger Sample App',
+    },
+    'doc_expansion': 'full',
+    'token_type': 'JWT',
+}
 
 import django12factor
 globals().update(django12factor.factorise())

@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 class BaseModelSerializer(serializers.ModelSerializer):
-    pk = serializers.SerializerMethodField()
+    id = serializers.SerializerMethodField()
 
-    def get_pk(self, instance):
+    def get_id(self, instance):
         return str(instance.id)

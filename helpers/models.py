@@ -7,6 +7,15 @@ def getid():
     from simpleflake import simpleflake
     return simpleflake()
 
+from taggit.models import GenericUUIDTaggedItemBase, TaggedItemBase
+
+
+class GenericSimpleflakeIDTaggedItem(GenericUUIDTaggedItemBase, TaggedItemBase):
+    object_id = models.BigIntegerField(verbose_name=_('Object id'), db_index=True)
+    class Meta:
+        verbose_name = _('Tag')
+        verbose_name_plural = _('Tags')
+
 
 class BaseModel(models.Model):
     id = models.BigIntegerField(
