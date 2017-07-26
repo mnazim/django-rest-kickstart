@@ -1,6 +1,9 @@
 # Django REST Kickstart
 
-An opinionated starting point for creating JSON API using Django, Django Rest Framework, and PostgreSQL.
+A *slightly* opinionated starting point for creating JSON API using Django, Django Rest Framework, PostgreSQL.
+
+**Note: Python 1 is not supported.**
+
 
 ## What's inside
 
@@ -25,7 +28,6 @@ Checkout the source code for,
 - `helpers.models.BaseModel` implements simpleflake primary keys for models, in addition to providing some common fields.
 - `helpers.serializers.BaseModelSerializer` implements conversion of simpleflake primary keys to strings.
 
-
 ### Filtering
 
 [django-filter][djfilter] filter backend is integerated.
@@ -34,24 +36,40 @@ Checkout the source code for,
 
 See [django12factor][d12f] for more details.
 
-Making settings available as environment variables is not, and should not be, a part of the API application itself. I use [direnv][direnv] for this, you may use something else.
+Making settings available as environment variables is not, and should not be, a part of the API application itself. I use [direnv][direnv] during local development, you may use a differnt way to supply configuration.
+
 
 ## Usage
 
-Install [pipenv][pipenv] before proceeding.
+I am using [pipenv][pipenv] to create/manage virtualenvs. Install it, read the docs before proceeding.
+
+Once pipenv is installed, 
 
 ```
-git clone git@github.com:mnazim/django-rest-kickstart.git
-mv django-rest-kickstart myproject
-cd myprojectth
-pipenv install
+git clone https://github.com/mnazim/django-rest-kickstart.git myproject
+cd myproject
+rm -rf .git
+pipenv --three
+pipenv install -d
 pipenv shell
-# provide settings.
+```
+
+
+Provide following settings via environment variables.
+
+- `DEBUG`
+- `SECRET_KEY`
+- `ALLOWED_HOSTS`
+- `DATABASE_URL` as expected by [dj-database-url][djdburl]
+
+and the rest is just Django,
+```
 ./manage.py migrate
 ./manage.py createsuperuser
 ./manage.py runserver
 ```
 
+*Happy hacking!*
 
 [pipenv]:https://github.com/kennethreitz/pipenv
 [simpleflake]:https://pypi.python.org/pypi/simpleflake
@@ -60,3 +78,4 @@ pipenv shell
 [12factor]:https://12factor.net
 [d12f]:https://django12factor.readthedocs.io
 [direnv]:https://direnv.net/
+[djdburl]:https://github.com/kennethreitz/dj-database-url
