@@ -2,7 +2,7 @@
 
 A *slightly* opinionated starting point for creating JSON API using Django, Django Rest Framework, PostgreSQL.
 
-**Note: Python 1 is not supported.**
+**Note: Python 2 is not supported.**
 
 
 ## What's inside
